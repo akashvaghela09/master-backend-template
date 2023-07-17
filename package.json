@@ -1,0 +1,27 @@
+{
+  "name": "master-backend",
+  "version": "1.0.0",
+  "description": "Single repo to run multiple nodejs apps",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akashvaghela09/master-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akashvaghela09/master-backend/issues"
+  },
+  "homepage": "https://github.com/akashvaghela09/master-backend#readme",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1"
+  }
+}
