@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "pull-all": "cd apps/server1 && git pull origin master && cd ../server2 && git pull origin master",
+    "install-all": "cd apps/server1 && npm install && cd ../server2 && npm install"
   },
   "repository": {
     "type": "git",
