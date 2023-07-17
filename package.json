@@ -8,7 +8,8 @@
     "start": "node index.js",
     "dev": "nodemon index.js",
     "pull-all": "cd apps/s1 && git pull origin master && cd ../s2 && git pull origin master",
-    "install-all": "cd apps/s1 && npm install && cd ../s2 && npm install"
+    "install-all": "cd apps/s1 && npm install && cd ../s2 && npm install",
+    "build": "install-all && yarn build"
   },
   "repository": {
     "type": "git",
