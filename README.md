@@ -62,8 +62,8 @@ Single Backend to run and deploy multiple nodejs apps.
     app.use('/server1', server1);
 
     // Server 2
-    const server1 = require('./apps/server1/index.js');
-    app.use('/server1', server1);
+    const server2 = require('./apps/server2/index.js');
+    app.use('/server2', server2);
     ```
 
 ## Running the app
@@ -75,7 +75,7 @@ Single Backend to run and deploy multiple nodejs apps.
     ```
     The master backend will be accessible at http://localhost:6060
 
-2. To access the APIs of server1, use the URL http://localhost:6060/server1. For server2, use http://localhost:6060/server2. The individual apps will run under their respective routes.
+2. To access the APIs of server1, use the URL http://localhost:6060/server1. <br />For server2, use http://localhost:6060/server2. The individual apps will run under their respective routes.
 
 ## Development Workflow
 
@@ -102,6 +102,8 @@ The master backend will now include the latest changes from server1 and server2,
 ## Additional Notes
 
 - Remember to update the environment variables (`PORT`, `SERVER1_PORT`, `SERVER2_PORT`) in the `.env` files for each app as per your requirements.
+
+- Make sure that the ports specified in the environment variables are being used by the respective apps.
 
 - Ensure that you have the necessary permissions and access to the server1 and server2 repositories on GitHub to clone, pull, and push changes.
 

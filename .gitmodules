@@ -1,0 +1,6 @@
+[submodule "apps/s1"]
+	path = apps/s1
+	url = https://github.com/akashvaghela09/node-express-template.git
+[submodule "apps/s2"]
+	path = apps/s2
+	url = https://github.com/akashvaghela09/node-express-template.git
