@@ -54,7 +54,7 @@ Single Backend to run and deploy multiple nodejs apps.
    }
    ```
 
-6. Import both apps in `index.js` and you are good to go.
+6. Import both apps in `index.js` file in the root of the project. this will import the apps as a module.
 
     ```javascript
     // Server 1
@@ -66,6 +66,13 @@ Single Backend to run and deploy multiple nodejs apps.
     app.use('/server2', server2);
     ```
 
+7. Rename `.env.example` to `.env` and update the environment variables at all the places. 
+
+    ***For Example***
+    - `PORT` 
+    - `SERVER1_PORT`
+    -  `SERVER2_PORT`
+
 ## Running the app
 
 1. Run the following command from the root of the project:
@@ -76,6 +83,8 @@ Single Backend to run and deploy multiple nodejs apps.
     The master backend will be accessible at http://localhost:6060
 
 2. To access the APIs of server1, use the URL http://localhost:6060/server1. <br />For server2, use http://localhost:6060/server2. The individual apps will run under their respective routes.
+
+If face any issues, refer to the [Troubleshooting](#troubleshooting) section.
 
 ## Development Workflow
 
@@ -99,17 +108,32 @@ To develop and update the server1 and server2 apps, follow these steps:
 
 The master backend will now include the latest changes from server1 and server2, and you can deploy the updated backend.
 
-## Additional Notes
+## Troubleshooting
 
-- Remember to update the environment variables (`PORT`, `SERVER1_PORT`, `SERVER2_PORT`) in the `.env` files for each app as per your requirements.
+- Remember to update the environment variables and their values in Parent and submodules (server1 and server2) as per your requirements. 
+  ***For Example***
+  - `PORT` 
+  - `SERVER1_PORT`
+  -  `SERVER2_PORT`
 
-- Make sure that the ports specified in the environment variables are being used by the respective apps.
+- If you have added any new dependencies in submodules (server1 or server2), make sure to install them in the master backend as well by running the following command from the root of the project:
 
-- Ensure that you have the necessary permissions and access to the server1 and server2 repositories on GitHub to clone, pull, and push changes.
+    ```
+    npm run install-all
+    ```
 
-- When cloning the master backend repository or pulling the latest changes, the server1 and server2 repositories will also be cloned or updated as part of the submodules.
+- If you have renamed the submodule folders, or used a different name for the submodule at the time of adding it, make sure to update the paths accordingly.
+
+    - `index.js` in the root of the project. this will make sure that the app is imported correctly.
+    - `import-deps.js` in the root of the project. this will make sure that the dependencies are imported in the master backend.
+    - `package.json` scripts in the root of the project: 
+      - `pull-all`
+      - `install-all`
+
 
 - You can add more apps by following the same pattern, adding them as submodules and configuring their respective routes in the master backend.
+
+- Ensure that you have the necessary permissions and access to the submodule repositories on GitHub to clone, pull, and push changes.
 
 - For more information and advanced usage of Git submodules, refer to the official Git documentation: [Git Submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules).
 
