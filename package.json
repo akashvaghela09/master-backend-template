@@ -1,14 +1,14 @@
 {
   "name": "master-backend",
   "version": "1.0.0",
-  "description": "Single repo to run multiple nodejs apps",
+  "description": "Single Backend to run multiple nodejs apps",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "pull-all": "cd apps/s1 && git pull origin master && cd ../s2 && git pull origin master",
-    "install-all": "cd apps/s1 && npm install && cd ../s2 && npm install"
+    "pull-all": "cd apps/server1 && git pull origin master && cd ../server2 && git pull origin master && node import-deps.js",
+    "install-all": "node import-deps.js && cd apps/server1 && npm install && cd ../server2 && npm install"
   },
   "repository": {
     "type": "git",
@@ -22,8 +22,6 @@
   },
   "homepage": "https://github.com/akashvaghela09/master-backend#readme",
   "dependencies": {
-    "body-parser": "^1.20.1",
-    "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "nodemon": "^3.0.1"
